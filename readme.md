@@ -1,6 +1,6 @@
 ## *DICT - QuickStart*
 
-Type safe wrapper do PIX refeito em Reason nativo!
+Type safe wrapper do PIX (Pagamentos Instantâneos do BACEN) refeito em Reason que compila para código nativo!
 
 ```reason
 let main = () => Lwt_main.run({
@@ -40,7 +40,9 @@ __PS: Isso é só um demo, não um exemplo de como rodar em produção__
 
 ## Problemas
 
-Bem, você não vai conseguir rodar na sua máquina pq o teste só funciona se vc estiver dentro da rede do ISPB. Mas você pode dar uma lida no código e rodar os testes. O código Java foi deixado do lado para fins de comparação.
+Bem, você não vai conseguir rodar em sua máquina porque o ambiente de testes só funciona dentro da rede do ISPB. Mas você pode dar uma lida no código e rodar os testes. O código Java foi deixado em nosso repo para fins de comparação.
+
+Veja como é facil e seguro a utilização de uma linguagem como ReasonML.
 
 ## Requisitos
 
@@ -66,4 +68,4 @@ esy x PixDictQuickstartApp.exe
 esy x TestPixDictQuickstart.exe
 ```
 
-<small>Made with 🧐 by Astrocoders</small>
+<small>Made with 🧐 by [Astrocoders](https://astrocoders.com)</small>
