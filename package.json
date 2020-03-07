@@ -1,0 +1,53 @@
+{
+  "name": "pix-dict-quickstart",
+  "version": "0.0.0",
+  "description": "My Project",
+  "esy": {
+    "build": "dune build -p <PACKAGE_NAME>",
+    "buildDev": "pesy",
+    "release": { "releasedBinaries": [ "PixDictQuickstartApp.exe" ] }
+  },
+  "buildDirs": {
+    "test": {
+      "require": [ "pix-dict-quickstart.lib", "rely.lib" ],
+      "main": "TestPixDictQuickstart",
+      "name": "TestPixDictQuickstart.exe",
+      "ocamloptFlags": ["-linkall", "-g"]
+    },
+    "library": {
+      "name": "pix-dict-quickstart.lib",
+      "namespace": "PixDictQuickstart",
+      "require": [ "lwt", "lambdasoup", "markup", "cohttp-lwt-unix", "base" ],
+      "preprocess": [ "pps", "lwt_ppx", "ppx_deriving.show" ]
+    },
+    "executable": {
+      "main": "PixDictQuickstartApp",
+      "name": "PixDictQuickstartApp.exe",
+      "require": [ "lwt", "pix-dict-quickstart.lib" ],
+      "preprocess": [ "pps", "lwt_ppx" ]
+    }
+  },
+  "scripts": {
+    "pesy": "bash -c 'env PESY_MODE=update pesy'",
+    "test": "esy x TestPixDictQuickstart.exe"
+  },
+  "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/base": "v0.13.1",
+    "@opam/cohttp-lwt-unix": "2.5.1",
+    "@opam/dune": ">=1.6.0",
+    "@opam/lambdasoup": "0.7.0",
+    "@opam/lwt": "5.1.2",
+    "@opam/lwt_ppx": "2.0.0",
+    "@opam/markup": "0.8.2",
+    "@opam/ppx_deriving": "4.4.1",
+    "ocaml": "^4.4.0"
+  },
+  "devDependencies": {
+    "ocaml": "4.7.1004",
+    "refmterr": "*",
+    "pesy": "*",
+    "@reason-native/rely": "^3.2.1",
+    "@opam/merlin": "*"
+  }
+}
